@@ -15,10 +15,18 @@ static int  get_user_input(void);       /* get a valid integer menu choice */
 static void select_menu_item(int input);/* run code based on user's choice */
 static void go_back_to_main(void);      /* wait for 'b'/'B' to continue */
 static int  is_integer(const char *s);  /* validate integer string */
+void menu_item_1(void);
+void menu_item_2(void);
+void menu_item_3(void);
+void menu_item_4(void);
+int is_positive(float val, const char *param_name);
+float calc_series(float resistor[], int resistor_count);
+float calc_parallel(float resistor[], int resistor_count);
 
 int main(void)
 {
-    /* this will run forever until we call exit(0) in select_menu_item() */
+    /* this will run forever until we call 
+    exit(0) in select_menu_item() */
     for(;;) {
         main_menu();
     }
@@ -97,16 +105,16 @@ static void select_menu_item(int input)
 
 static void print_main_menu(void)
 {
-    printf("\n----------- Main menu -----------\n");
-    printf("\n"
-           "\t\t\t\t\t\t\n"
-           "\t1. Menu item 1\t\t\n"
-           "\t2. Menu item 2\t\t\n"
-           "\t3. Menu item 3\t\t\n"
-           "\t4. Menu item 4\t\t\n"
-           "\t5. Exit\t\t\t\t\n"
-           "\t\t\t\t\t\t\n");
-    printf("---------------------------------------------\n");
+    printf("\n------------------- Main menu -------------------\n");
+    printf("|\t\t\t\t\t\t|\n"
+           "|\t\t\t\t\t\t|\n"
+           "|\t1. Resistor Calculation Module\t\t|\n"
+           "|\t2. Unit Converter\t\t\t|\n"
+           "|\t3. Linear Algebra Calculator\t\t|\n"
+           "|\t4. Thermodynamic Properties Calculator\t|\n"
+           "|\t5. Exit\t\t\t\t\t|\n"
+           "|\t\t\t\t\t\t|\n");
+    printf("|-----------------------------------------------|\n");
 }
 
 static void go_back_to_main(void)
